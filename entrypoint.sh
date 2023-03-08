@@ -48,7 +48,7 @@ fi # [ -f $5 ]
 
 if [ -f $6  == "true" ]; then
     echo '拷贝python环境'
-    cp /wine/drive_c/Python39/ ./build/Python39
+    cp -r /wine/drive_c/Python39/ ./build/Python39
 fi # [ -f $6 ]
 
 
