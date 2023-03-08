@@ -19,6 +19,7 @@ WORKDIR=${SRCDIR:-/src}
 
 SPEC_FILE=${4:-*.spec}
 
+
 python -m pip install --upgrade pip wheel setuptools
 
 #
@@ -45,7 +46,13 @@ if [ -f $5 ]; then
     pip install -r $5
 fi # [ -f $5 ]
 
+if [ -f $6  == "true" ]; then
+    echo '拷贝python环境'
+    cp /wine/drive_c/Python39/ ./build/Python39
+fi # [ -f $6 ]
 
+
+copy_python_env
 
 # if [[ "$@" == "" ]]; then
 pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
