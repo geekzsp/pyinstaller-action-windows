@@ -50,7 +50,7 @@ echo '---------------------'
 echo $6
 if [ $6  == "true" ]; then
     echo '拷贝python环境'
-    cp -r /wine/drive_c/Python39/ ./build/Python39
+    cp -r /wine/drive_c/Python39/ ./build/
 fi # [ -f $6 ]
 
 # if [[ "$@" == "" ]]; then
