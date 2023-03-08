@@ -51,9 +51,6 @@ if [ -f $6  == "true" ]; then
     cp -r /wine/drive_c/Python39/ ./build/Python39
 fi # [ -f $6 ]
 
-
-copy_python_env
-
 # if [[ "$@" == "" ]]; then
 pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 chown -R --reference=. ./dist/windows
