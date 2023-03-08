@@ -25,6 +25,11 @@ inputs:
     description: 'Specify a file path for requirements.txt file'
     required: False
     default: "requirements.txt"
+  copy_python_env:
+    description: '是否拷贝python环境信息'
+    required: False
+    default: "False"
+     
 outputs:
   output:
     description: 'The output of PyInstaller'
@@ -38,3 +43,4 @@ runs:
     - ${{ inputs.pypi_index_url }}
     - ${{ inputs.spec }}
     - ${{ inputs.requirements }}
+    - ${{ inputs.copy_python_env }}
