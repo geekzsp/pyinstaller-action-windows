@@ -50,6 +50,7 @@ echo '---------------------'
 echo $6
 if [ $6  == "true" ]; then
     echo '拷贝python环境'
+    ls ./build
     cp -r /wine/drive_c/Python39 ./build/python39
     cd ./build/python39
     zip -q -r -m python39.zip *
