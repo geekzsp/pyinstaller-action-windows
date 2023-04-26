@@ -46,6 +46,13 @@ if [ -f $5 ]; then
     pip install -r $5
 fi # [ -f $5 ]
 
+
+# if [[ "$@" == "" ]]; then
+pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
+chown -R --reference=. ./dist/windows
+# else
+    # sh -c "$@"
+# fi # [[ "$@" == "" ]]
 echo '---------------------'
 echo $6
 if [ $6  == "true" ]; then
@@ -55,10 +62,3 @@ if [ $6  == "true" ]; then
     cd ./build/python39
     zip -q -r -m python39.zip *
 fi # [ -f $6 ]
-
-# if [[ "$@" == "" ]]; then
-pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
-chown -R --reference=. ./dist/windows
-# else
-    # sh -c "$@"
-# fi # [[ "$@" == "" ]]
